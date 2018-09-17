@@ -1,0 +1,105 @@
+
+/*
+let html = '';
+let testDoc,testWindow ;
+var jsdom = require('jsdom');
+const {JSDOM} = jsdom;
+//window = (new JSDOM(``, { runScripts: 'dangerously', resources: 'usable' })).window
+
+
+
+//jsdom.defaultDocumentFeatures = { 
+//  FetchExternalResources   : ['script'],
+//  ProcessExternalResources : ['script'],
+//  MutationEvents           : '2.0',
+//  QuerySelector            : false
+//};
+
+
+function copyProps(src, target) {
+  const props = Object.getOwnPropertyNames(src)
+    .filter(prop => typeof target[prop] === 'undefined')
+    .reduce((result, prop) => ({
+      ...result,
+      [prop]: Object.getOwnPropertyDescriptor(src, prop),
+    }), {});
+  Object.defineProperties(target, props);
+}
+
+
+beforeEach(() => {
+  //read from where the script is run
+  // https://github.com/jsdom/jsdom
+  html = require('fs').readFileSync('src/html/sample.html').toString();
+  testWindow = new JSDOM(html,{ runScripts: "dangerously",pretendToBeVisual: true, resources: 'usable' });
+  global.window = testWindow;
+  global.document = testWindow.document;
+  global.navigator = {
+    userAgent: 'node.js'
+  }
+  //copyProps(testWindow,global);
+  console.log("q2 "+ window.document.documentElement.innerHTML)
+
+});
+
+afterEach(() => {
+
+});
+
+
+
+
+test('basic test that passes', () => {
+
+  let x1 = 35 / 5;
+  expect(x1).toBe(7);
+
+});
+
+
+// https://jestjs.io/docs/en/expect
+
+test('jest has a default document', () => {
+  const $ = require('jquery');
+  expect(document).toBeDefined();
+  expect($).toBeDefined();
+
+});
+
+// https://www.phpied.com/jest-jquery-testing-vanilla-app/
+
+test('html got loaded', () => {
+  
+  expect(html).toBeDefined();
+  expect(html).toEqual(expect.stringContaining('html'));
+
+});
+
+
+
+describe('validateSubmits', function () {
+  const $ = require('jquery');
+  it('shows/hides error banner', function () {
+
+    //document.documentElement.innerHTML = html;
+    //console.log(document.documentElement.innerHTML);
+    expect($('#err').hasClass('hidden')).toBeTruthy();
+
+  });
+
+   
+
+  it('adds/removes error classes to labels', function () {
+
+   // document.documentElement.innerHTML = html;
+    $('form').submit();
+    expect($('#err').hasClass('hidden')).toBeFalsy();
+
+  });
+
+});
+
+
+*/
+
+ 
